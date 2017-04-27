@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>懒人日记</title>
+<style>
+body
+{
+	background:url(img/s.png);
+	padding:0;
+	margin:0;
+}
+#hed
+{
+	background:url(img/s.png) repeat;
+	height:150px;
+	width:100%;
+}
+#header
+{
+	background:url(img/cloud_02.jpg) no-repeat;
+	height:150px;
+	width:284px;
+	position:absolute;
+	right:0;
+	top:0;
+}
+#book
+{
+	position:absolute;
+	left:150px;
+	top:150px;
+	background:url(img/page_06.jpg);
+	width:944px;
+	height:511px;
+
+}
+#bt
+{
+	background:url(img/page_09.jpg) repeat;
+	height:190px;
+	width:103%;
+	position:absolute;
+	left:-38px;
+	top:656px;
+}
+#slide
+{
+	position:absolute;
+	left:1050px;
+	top:250px;
+}
+#slide ul
+{
+	list-style:none;
+}
+#ha
+{
+	position:absolute;
+	background:url(img/about_06.jpg);
+	width:447px;
+	height:602px;
+	left:620px;
+	top:220px;
+}
+#w
+{
+	width:100%;
+	height:60px;
+	position:absolute;
+	top:840px;
+	left:0;
+	background:url(img/foot_bg.jpg);
+}
+#xiao
+{
+	width:80px;
+	height:41px;
+	position:absolute;
+	left:930px;
+	top:155px;
+}
+#xiao:hover
+{
+	cursor:pointer;
+}
+#text
+{
+	 color:#7f543a; 
+	 font-size:12px; 
+	 float:left; 
+	 margin:150px auto auto 40px; 
+	 line-height:20px; 
+	 display:inline;
+	 position:absolute;
+	 left:180px;
+	 top:80px;
+}
+</style>
+<script>
+window.onload=function()
+{
+	var ob=document.getElementById('slide');
+	var oul=ob.getElementsByTagName('ul')[0];
+	var oli=oul.getElementsByTagName('li');
+	var aimg=oul.getElementsByTagName('img');
+	for(var i=0;i<oli.length;i++)
+	{
+		oli[i].index=i;
+		oli[i].onmouseover=function()
+		{
+			for(var i=0;i<aimg.length;i++)
+			{
+				aimg[i].src=aimg[i].src.replace('big','small');
+			}
+			aimg[this.index].src=aimg[this.index].src.replace('small','big');
+		}
+	   oli[i].onmouseout=function()
+	   {
+		   for(var i=0;i<aimg.length;i++)
+		   {
+			   aimg[i].src=aimg[i].src.replace('big','small');
+		   }
+	   }
+	}
+     
+}
+
+</script>
+</head>
+
+<body>
+<div id="hed">
+</div>
+<div id="header">
+</div>
+<div id="book">
+</div>
+<a href="../main.html">
+<div id="xiao">
+</div>
+</a>
+<div id="bt">
+</div>
+<div id="text">
+<p>
+<h1>懒人日记</h1>
+</p>
+<p>哈，没谈过对象，很amazing，美丽这个老女人.</p>
+<p>又生气了，又不理我了，我又哪里做不好了.</p>
+<p>
+最近是爱上这句："我麻辣香锅还没吃过，我要吃麻辣香锅".
+</p>
+<p>体育场上就是发着光的，很闪耀，亮瞎我的双眼吧~美丽魅力无极限.</p>
+<p>美图抠图：美丽语录（怎么只有我没有脖子，把我的脖子安上去）</p>
+<p>你丫的，滚开...口头禅，美丽，不对，你应该说什么..'请走开'</p>
+<p>美丽请我看电影吧~美丽，美丽~</p>
+<p>liliHuang~yellow mother~啊哈哈.</p>
+<p>最讨厌别人抱我的腰...可我就喜欢啊~嘎嘎~</p>
+<p>世上有种黑，叫做自然黑,幸好有个比我更黑的人，安慰了.</p>
+<p>FaceToFace真好，那油光发亮的头发可以给我照镜子了.</p>
+<p>美丽什么时候能对人温柔一点..</p>
+<p>实验室最老的，儿童节应该给我们买吃的吧~</p>
+<p>临时想起来的做东西的，快考试了，额..有点赶..</p>
+<p>周四，你在日历写的我，好早之前就算到了的..</p>
+<p>遇到的，一切都会是好的，the Beauty~</p>
+</div>
+<div id="slide">
+<ul>
+<li><a href="about.html"><img src="img/big_07.png" /></a></li>
+<li><a href="photos.html"><img src="img/small_10.png" /></a></li>
+<li><a href="loveAffair.html"><img src="img/small_20.png" /></a></li>
+<li><a href="Memory.html"><img src="img/small_21.png" /></a></li>
+<li><a href="havefun.html"><img src="img/small_15.png" /></a></li>
+</ul>
+</div>
+<div id="ha">
+</div>
+<div id="w">
+</div>
+<embed src="music/Kiss The Rain.mp3" width="292" height="43" hidden="true" loop="true"></embed>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Accompany.</title>
+<style>
+body
+{
+	background:url(img/s.png);
+	padding:0;
+	margin:0;
+}
+#hed
+{
+	background:url(img/s.png) repeat;
+	height:150px;
+	width:100%;
+}
+#header
+{
+	background:url(img/cloud_02.jpg) no-repeat;
+	height:150px;
+	width:284px;
+	position:absolute;
+	right:0;
+	top:0;
+}
+#book
+{
+	position:absolute;
+	left:150px;
+	top:150px;
+	background:url(img/page_06.jpg);
+	width:944px;
+	height:511px;
+
+}
+#bt
+{
+	background:url(img/page_09.jpg) repeat;
+	height:190px;
+	width:103%;
+	position:absolute;
+	left:-38px;
+	top:656px;
+}
+#slide
+{
+	position:absolute;
+	left:1050px;
+	top:250px;
+}
+#slide ul
+{
+	list-style:none;
+}
+#ha
+{
+	position:absolute;
+	background:url(img/linker_03.jpg);
+	width:447px;
+	height:602px;
+	left:620px;
+	top:220px;
+}
+#w
+{
+	width:100%;
+	height:60px;
+	position:absolute;
+	top:840px;
+	left:0;
+	background:url(img/foot_bg.JPG);
+}
+#xiao
+{
+	width:80px;
+	height:41px;
+	position:absolute;
+	left:930px;
+	top:155px;
+}
+#xiao:hover
+{
+	cursor:pointer;
+}
+#lanren
+{
+	width:240px;
+	height:319px;
+	position:absolute;
+	left:198px;
+	top:213px;
+	background:url(photos/small.png);
+}
+#lanren:hover
+{
+	cursor:pointer;
+}
+#l
+{
+	height:319px;
+	width:240px;
+	position:absolute;
+	background:url(photos/zhuhuihui.png);
+	left:390px;
+	top:374px;
+}
+#l:hover
+{
+	cursor:pointer;
+}
+#s
+{
+	background:url(photos/22.png);
+	z-index:2222;
+	height:200px;
+	width:240px;
+	left:413px;
+	top:213px;
+	position:absolute;
+}
+#s:hover
+{
+	cursor:pointer;
+}
+#o
+{
+	background:url(photos/33.png);
+	height:319px;
+	width:240px;
+	left:193px;
+	top:389px;
+	position:absolute;
+}
+#o:hover
+{
+	cursor:pointer;
+}
+#q
+{
+	background:url(photos/444.png);
+	height:319px;
+	width:240px;
+	position:absolute;
+	left:292px;
+	top:563px;
+}
+#q:hover
+{
+	cursor:pointer;
+}
+#k
+{
+	background:url(photos/wao.jpg);
+	height:148px;
+	width:136px;
+	position:absolute;
+	left:189px;
+	top:616px;
+}
+#p
+{
+	width:107px;
+	height:140px;
+	position:absolute;
+	left:505px;
+	top:643px;
+	background:url(photos/wa.jpg);
+}
+
+#what
+{
+	position:absolute;
+	left:200px;
+	top:200px;
+	width:240px;
+	height:319px;
+	z-index:1000;
+	display:none;
+}
+#whatul
+{
+	position:absolute;
+	top:0;
+	left:0;
+	width:240px;
+	height:319px;
+	list-style:none;
+	cursor:pointer;
+}
+#whatul li
+{
+	position:absolute;
+	left:0;
+	top:0;
+	width:240px;
+	height:319px;
+	cursor:pointer;
+	z-index:99999;
+}
+.current
+{
+	z-index:9999;
+}
+
+
+</style>
+<script>
+window.onload=function()
+{
+	var ob=document.getElementById('slide');
+	var oul=ob.getElementsByTagName('ul')[0];
+	var oli=oul.getElementsByTagName('li');
+	var aimg=oul.getElementsByTagName('img');
+	for(var i=0;i<oli.length;i++)
+	{
+		oli[i].index=i;
+		oli[i].onmouseover=function()
+		{
+			for(var i=0;i<aimg.length;i++)
+			{
+				aimg[i].src=aimg[i].src.replace('big','small');
+			}
+			aimg[this.index].src=aimg[this.index].src.replace('small','big');
+		}
+	   oli[i].onmouseout=function()
+	   {
+		   for(var i=0;i<aimg.length;i++)
+		   {
+			   aimg[i].src=aimg[i].src.replace('big','small');
+		   }
+	   }
+	}
+	
+	
+	//显示
+var usimg=document.getElementById('w012').getElementsByTagName('div');
+	var whatdiv=document.getElementById('what');
+	var whatimg=whatdiv.getElementsByTagName('li');
+	 for(var i=0;i<usimg.length;i++)
+    {
+		usimg[i].index=i;
+		usimg[i].onmouseover=function()
+		{
+			whatdiv.style.display='block';
+			for(var j=0;j<whatimg.length;j++)
+			{
+				whatimg[j].className='';
+				whatimg[j].style.display="none";
+			}
+			whatimg[this.index].className='current';
+			whatimg[this.index].style.display='block';
+		}
+		usimg[i].onmouseout=function()
+		{
+			whatdiv.style.display='none';
+		}
+		usimg[i].onmousemove=function(event)
+		{
+			var e=event||window.event;
+			var w=document.documentElement.offsetWidth-e.clientX;
+			whatdiv.style.top=e.clientY-20+'px';
+			whatdiv.style.left=e.clientX-20+'px';
+		}
+	}	
+	
+     
+}
+
+
+
+
+
+</script>
+</head>
+
+<body>
+<div id="hed">
+</div>
+<div id="header">
+</div>
+<div id="book">
+</div>
+<a href="../main.html">
+<div id="xiao">
+</div>
+</a>
+<div id="bt">
+</div>
+
+<div id="slide">
+<ul>
+<li><a href="about.html"><img src="img/small_07.png" /></a></li>
+<li><a href="photos.html"><img src="img/small_10.png" /></a></li>
+<li><a href="loveAffair.html"><img src="img/small_20.png" /></a></li>
+<li><a href="Memory.html"><img src="img/small_21.png" /></a></li>
+<li><a href="haveFun.html"><img src="img/big_15.png" /></a></li>
+</ul>
+</div>
+
+<div id="ha">
+</div>
+<div id="w">
+</div>
+<div id="w012">
+<div id="lanren">
+</div>
+<div id="l">
+</div>
+<div id="s">
+</div>
+<div id="o">
+</div>
+<div id="q">
+</div>
+</div>
+<div id="k">
+</div>
+<div id="p">
+</div>
+
+<div id="what">
+<ul id="whatul">
+<li><img src="smeil/222.png" /></li>
+<li><img src="smeil/22.png" /></li>
+<li><img src="smeil/111.png" /></li>
+<li><img src="smeil/44.png" /></li>
+<li><img src="smeil/55.png" /></li>
+</ul>
+</div>
+<embed src="music/纯音乐 - 风居住的街道.mp3"  hidden="true" loop="true"></embed>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>魔漫送祝福</title>
+<style>
+*
+{
+	margin:0;
+	padding:0;
+	}
+body
+{
+	background:url(img/s.png);
+	padding:0;
+	margin:0;
+}
+#hed
+{
+	background:url(img/s.png) repeat;
+	height:150px;
+	width:100%;
+}
+#header
+{
+	background:url(img/cloud_02.jpg) no-repeat;
+	height:150px;
+	width:284px;
+	position:absolute;
+	right:0;
+	top:0;
+}
+#book
+{
+	position:absolute;
+	left:150px;
+	top:150px;
+	background:url(img/page_06.jpg);
+	width:944px;
+	height:511px;
+
+}
+#bt
+{
+	background:url(img/page_09.jpg) repeat;
+	height:190px;
+	width:103%;
+	position:absolute;
+	left:-38px;
+	top:656px;
+}
+#slide
+{
+	position:absolute;
+	left:1089px;
+	top:250px;
+}
+#slide ul
+{
+	list-style:none;
+}
+#xiao
+{
+	width:80px;
+	height:41px;
+	position:absolute;
+	left:930px;
+	top:155px;
+	z-index:5;
+}
+#xiao:hover
+{
+	cursor:pointer;
+}
+#t
+{
+	background:url(img/t.gif);
+	height:680px;
+	width:772px;
+	top:173px;
+	position:absolute;
+	left:229px;
+	
+}
+#div4
+{
+	position:relative;
+	left:334px;
+	top:120px;
+	width:630px;
+	height:500px;
+	border:2px solid #7f543a;
+	border-radius:10px;
+	overflow:hidden;
+}
+#div3
+{
+    position:absolute;
+	top:0px;;
+	left:0;
+	padding:2px;
+}
+#liu
+{
+	background:url(img/4.jpg);
+		z-index:10;
+	height:450px;
+	width:300px;
+	position:absolute;
+	left:10px;
+	top:0px;
+	border-radius:20px;
+}
+#text
+{
+	 color:#7f543a; 
+	 font-size:18px; 
+	 float:left; 
+	 margin:150px auto auto 40px; 
+	 line-height:20px; 
+	 display:inline;
+	 position:absolute;
+	 left:550px;
+	 top:80px;
+}
+#qiche
+{
+	background:url(img/2.jpg);
+	height:466px;
+	width:340px;
+	left:270px;
+	top:30px;
+	position:absolute;
+	z-index:5;
+}
+#sroll
+{
+	width:12px;
+	height:500px;
+	position:absolute;
+	left:958px;
+	top:270px;
+	border-radius:30px;
+	background:url(img/b.png) repeat;
+}
+#slid
+{
+	height:50px;
+	width:10px;
+	position:absolute;
+	left:0;
+	top:0;
+	background:#F90;
+	border-radius:30px;
+	cursor:pointer;
+	border:2px solid black;
+}
+#wa
+{
+	position:absolute;
+	left:0;
+	top:460px;
+	width:367px;
+	height:467px;
+	background:url(smeil/2.png);
+	z-index:300;
+}
+#which
+{
+	width:200px;
+	height:250px;
+	position:absolute;
+	left:390px;
+	top:580px;
+	background:url(img/3.png);
+}
+
+</style>
+<script>
+window.onload=function()
+{
+	var ob=document.getElementById('slide');
+	var oul=ob.getElementsByTagName('ul')[0];
+	var oli=oul.getElementsByTagName('li');
+	var aimg=oul.getElementsByTagName('img');
+	for(var i=0;i<oli.length;i++)
+	{
+		oli[i].index=i;
+		oli[i].onmouseover=function()
+		{
+			for(var i=0;i<aimg.length;i++)
+			{
+				aimg[i].src=aimg[i].src.replace('big','small');
+			}
+			aimg[this.index].src=aimg[this.index].src.replace('small','big');
+		}
+	   oli[i].onmouseout=function()
+	   {
+		   for(var i=0;i<aimg.length;i++)
+		   {
+			   aimg[i].src=aimg[i].src.replace('big','small');
+		   }
+	   }
+	}
+     
+	 
+	   
+    var oparent=document.getElementById('sroll');
+	var odiv=document.getElementById('slid');
+	var odiv2=document.getElementById('div4');
+	var odiv3=document.getElementById('div3');
+	var disX=0;
+	
+	odiv.onmousedown=function(ev)
+	{
+		var oevent=ev||event;
+		disY=oevent.clientY-odiv.offsetTop;
+		
+		
+		document.onmousemove=function(ev)
+	{
+	  var	oevent=ev||event;
+	   var l=oevent.clientY-disY;
+		
+		if(l<0)
+		{
+			l=0;
+		}
+		else if
+		(l>oparent.offsetHeight-odiv.offsetHeight)
+		{
+		 l=oparent.offsetHeight-odiv.offsetHeight;	
+		}
+		
+		odiv.style.top=l+'px';
+		var scale=l/(oparent.offsetHeight-odiv.offsetHeight);
+		odiv3.style.top=(odiv3.offsetHeight-odiv2.offsetHeight)*(scale)+'px';
+		
+	}
+	  document.onmouseup=function()
+	  {
+		  document.onmousemove=null;
+		  document.onmouseup=null;
+	  }
+	  return false;
+	}
+	
+
+}
+
+</script>
+</head>
+
+<body>
+<div id="hed">
+</div>
+<div id="header">
+</div>
+<div id="book">
+</div>
+<div id="bt">
+</div>
+<a href="../main.html">
+<div id="xiao">
+</div>
+</a>
+<div id="slide">
+<ul>
+<li><a href="about.html"><img src="img/small_07.png" /></a></li>
+<li><a href="photos.html"><img src="img/big_10.png" /></a></li>
+<li><a href="loveAffair.html"><img src="img/small_20.png" /></a></li>
+<li><a href="Memory.html"><img src="img/small_21.png" /></a></li>
+<li><a href="havefun.html"><img src="img/small_15.png" /></a></li>
+</ul>
+</div>
+<div id="t">
+</div>
+<div id="text">
+<h1>魔漫相机</h1>
+</div>
+<div id="div4">
+<div id="div3">
+<div id="liu">
+</div>
+<div id="qiche">
+</div>
+<div id="wa">
+</div>
+<div id="which">
+</div>
+</div>
+</div>
+<div id="sroll">
+<div id="slid">
+</div>
+</div>
+<embed src="music/甘仕良 - 安静.mp3" width="292" height="43" hidden="true" loop="true"></embed>
+</body>
+</html>

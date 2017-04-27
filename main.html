@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>懒人工厂</title>
+<style>
+body
+{
+	background:url(story/img/main_bg.gif)
+	padding:0;
+	margin:0;
+}
+#hed
+{
+	background:url(story/img/s.png) repeat;
+	height:150px;
+	width:100%;
+}
+#header
+{
+	background:url(story/img/cloud_02.jpg) no-repeat;
+	height:150px;
+	width:284px;
+	position:absolute;
+	right:0;
+	top:0;
+}
+#bd
+{
+	position:absolute;
+	left:0;
+	top:150px;
+	background:url(story/img/s.png);
+	height:487px;
+	width:100%;
+}
+#bright
+{
+	
+	height:644px;
+	width:487px;
+	background:url(story/img/1.jpg);
+	position:absolute;
+	left:570px;
+	top:0;
+}
+#bleft
+{
+	position:absolute;
+	left:126px;
+	top:385px;
+	width:445px;
+	height:256px;
+	background:url(story/img/cloud_17.jpg);
+}
+#bu
+{
+	width:126px;
+	height:240px;
+	position:absolute;
+	left:0;
+	bottom:-197px;
+	background:url(story/img/bu.png) repeat;
+}
+#bottom
+{
+	position:absolute;
+	left:1020px;
+	top:200px;
+}
+#bottom ul
+{
+	list-style:none;
+}
+
+#bb
+{
+	width:100%;
+	height:60px;
+	position:absolute;
+	left:0;
+	top:790px;
+	background:url(story/img/foot_bg.jpg);
+}
+
+</style>
+<script>
+window.onload=function()
+{
+	var ob=document.getElementById('bottom');
+	var oul=ob.getElementsByTagName('ul')[0];
+	var oli=oul.getElementsByTagName('li');
+	var aimg=oul.getElementsByTagName('img');
+	for(var i=0;i<oli.length;i++)
+	{
+		oli[i].index=i;
+		oli[i].onmouseover=function()
+		{
+			for(var i=0;i<aimg.length;i++)
+			{
+				aimg[i].src=aimg[i].src.replace('big','small');
+			}
+			aimg[this.index].src=aimg[this.index].src.replace('small','big');
+		}
+	   oli[i].onmouseout=function()
+	   {
+		   for(var i=0;i<aimg.length;i++)
+		   {
+			   aimg[i].src=aimg[i].src.replace('big','small');
+		   }
+	   }
+	}
+	
+}
+</script>
+</head>
+
+<body>
+<div id="hed">
+</div>
+<div id="header">
+</div>
+<div id="bd">
+<div id="bleft">
+</div>
+<div id="bright">
+</div>
+<div id="bu">
+</div>
+</div>
+<div id="bottom">
+<ul>
+<li><a href="story/about.html"><img src="story/img/small_07.png" /></a></li>
+<li><a href="story/photos.html"><img src="story/img/small_10.png" /></a></li>
+<li><a href="story/loveAffair.html"><img src="story/img/small_20.png" /></a></li>
+<li><a href="story/Memory.html"><img src="story/img/small_21.png" /></a></li>
+<li><a href="story/havefun.html"><img src="story/img/small_15.png" /></a></li>
+</ul>
+</div>
+<div id="ha">
+</div>
+<div id="bb">
+</div>
+<embed src="story/music/甘仕良 - 坏孩子的天空.mp3" width="292" height="43" hidden="true" loop="true"></embed>
+</body>
+</html>
